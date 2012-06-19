@@ -262,7 +262,6 @@ function RouteCalculator()
 		return distance;
 	}
 
-
 	_self.setPoints = setPoints;
 	_self.getLines = getLines;
 }
