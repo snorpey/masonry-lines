@@ -33,7 +33,8 @@ function RouteCalculator()
 		
 		getPath( topmost_point );
 
-		return _lines;
+
+		return removeDouplicateLines( _lines );
 	}
 
 	function getPath( $point )
@@ -118,6 +119,38 @@ function RouteCalculator()
 		}
 
 		return is_neighbour;
+	}
+
+	function removeDouplicateLines( $lines )
+	{
+		var new_lines = [ ];
+		var new_line_ids = [ ];
+		
+		for ( var i = 0; i < $lines.length; i++ )
+		{
+			var add_line = true;
+
+			var line_id_1 = $lines[i][0].id + '-' + $lines[i][1].id;
+			var line_id_2 = $lines[i][1].id + '-' + $lines[i][0].id;
+
+			if (
+				new_line_ids.indexOf( line_id_1 ) !== -1 &&
+				new_line_ids.indexOf( line_id_2 ) !== -1
+			)
+			{
+				add_line = false;
+				
+				break;
+			}
+
+			if ( add_line )
+			{
+				new_line_ids.push( line_id_1, line_id_2 );
+				new_lines.push( $lines[i] );
+			}
+		}
+
+		return new_lines;
 	}
 
 	function isIntersecting( $point_1, $point_2, $axis )
