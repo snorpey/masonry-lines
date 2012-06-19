@@ -150,8 +150,6 @@ function RouteCalculator()
 			}
 		}
 
-		console.log( new_line_ids );
-
 		return new_lines;
 	}
 
