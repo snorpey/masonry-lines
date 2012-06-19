@@ -32,7 +32,8 @@ function RouteCalculator()
 		var topmost_point = getTopMostPoint( _points );
 		
 		getPath( topmost_point );
-
+		
+		addMissingItems();
 
 		return removeDouplicateLines( _lines );
 	}
@@ -119,6 +120,41 @@ function RouteCalculator()
 		}
 
 		return is_neighbour;
+	}
+
+	function addMissingItems()
+	{
+		var missing_points = [ ];
+
+		for ( var i = 0; i < _points.length; i++ )
+		{
+			if ( _points_checked.indexOf( _points[i].id ) === -1 )
+			{
+				missing_points.push( _points[i] );
+			}
+		}
+
+		for ( var i = 0; i < missing_points.length; i++ )
+		{
+			var shortest_distance = Infinity;
+			var closest_index = -1;
+
+			for ( var j = 0; j < _points.length; j++ )
+			{
+				if ( _points[j].id !== missing_points[i].id )
+				{
+					var distance = getDistance( missing_points[i], _points[j] );
+
+					if (distance < shortest_distance )
+					{
+						closest_index = j;
+						shortest_distance = distance;
+					}
+				}
+			}
+
+			addLine( missing_points[i], _points[closest_index] );
+		}
 	}
 
 	function removeDouplicateLines( $lines )
