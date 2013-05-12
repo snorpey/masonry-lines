@@ -3,32 +3,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=1">
-		<title>Masonry Lines</title>
-		<link href="css/stylesheet.css" rel="stylesheet" />
+		<title>masonry lines</title>
+		<link href="styles/global.css" rel="stylesheet" />
 		<script src="javascript/libraries/modernizr.min.js"></script>
 	</head>
 	<body>
 		<article>
-			<h1>Masonry Lines</h1>
-			<p>This is a prototype for calculating lines between randomly positioned items. There are no intersections between the lines and every item is connected to at least one line. It is written in JavaScript. jQuery Masonry is used to position the items.</p>
-			<p>You can fork this project <a href="https://github.com/snorpey/masonry-lines">github</a>.</p>
-			<p>The following external JavaScript libraries are used:</p>
-			<ul>
-				<li><a href="http://jquery.com">jQuery</a></li>
-				<li><a href="http://underscorejs.org">Underscore.js</a></li>
-				<li><a href="http://http://modernizr.com/">Modernizr</a></li>
-				<li><a href="http://masonry.desandro.com/">jQuery Masonry</a></li>
-			</ul>
+			<h1>masonry lines</h1>
+			<p>this is a prototype for calculating lines between randomly positioned items. there are no lines crossing eachother and every item is connected to at least one line.</p>
+			<p>this prototype was made by <a href="http://www.fishnation.de">georg</a>. you can follow him on <a href="https://twitter.com/snorpey">twitter</a> or fork this project <a href="https://github.com/snorpey/masonry-lines">github</a>.</p>
 		</article>
-		<a href="#" class="button">Add 10 more items</a>
+		<button class="button">add 10 more items</button>
 		<div class="items"></div>
-		<canvas id="lines" width="10" height="10"></canvas>
-		<script src="javascript/libraries/jquery-1.7.2.min.js"></script>
-		<script src="javascript/libraries/underscore.min.js"></script>
-		<script src="javascript/libraries/jquery.masonry.min.js"></script>
-		<script src="javascript/canvas.js"></script>
-		<script src="javascript/point-calculator.js"></script>
-		<script src="javascript/route-calculator.js"></script>
-		<script src="javascript/application.js"></script>
+		<canvas id="canvas" width="10" height="10"></canvas>
+		<script src="scripts/lib/require-2.1.6.js" data-main="scripts/src/main"></script>
 	</body>
 </html>
