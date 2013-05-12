@@ -9,13 +9,11 @@ requirejs.config(
 		urlArgs: 'bust=' + ( new Date() ).getTime(),
 		paths: {
 			'jquery' : 'lib/jquery-2.0.0',
-			'underscore' : 'lib/underscore-1.4.4',
 			'masonry' : 'lib/jquery.masonry-2.1.08',
 			'signals' : 'lib/signals-1.0.0'
 		},
 		shim: {
-			'masonry' : [ 'jquery' ],
-			'underscore': { exports: '_' }
+			'masonry' : [ 'jquery' ]
 		}
 	}
 );
