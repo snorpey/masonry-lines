@@ -3,7 +3,7 @@ masonry lines
 
 this is a prototype for calculating lines between randomly positioned items. there are no lines crossing eachother and every item is connected to at least one line. it is written in javascript. jquery masonry is used to position the items.
 
-[![masonry lines screen shot](http://o7.no/162WN8n)](http://snorpey.github.io/masonry-lines)
+[![masonry lines screen shot](http://dl.dropboxusercontent.com/u/1098704/Screenshots/github-masonry-lines.png)](http://snorpey.github.io/masonry-lines)
 
 a demo is available at http://snorpey.github.io/masonry-lines/
 
